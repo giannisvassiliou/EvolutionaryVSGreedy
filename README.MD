@@ -154,7 +154,21 @@ The experiment script supports flexible configuration of **workloads, rare queri
   Random seed for reproducibility
 
 ---
+## ▶️ Example: Run with Synthetic Workload
 
+### Basic mixed synthetic workload
+```bash
+python run_experiment.py \
+  --schema data/dbpedia_schema.txt \
+  --synthetic-workload \
+  --workload-mode mixed \
+  --synthetic-queries 150 \
+  --query-size 3 \
+  --structured-ratio 0.5 \
+  --budget 20 \
+  --population 60 \
+  --generations 100 \
+  --seed 42
 ## 🧠 Notes
 
 - Rare queries are generated from **low-degree nodes** and can be weighted more heavily to simulate importance.
